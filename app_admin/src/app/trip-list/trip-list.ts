@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Trip } from '../models/trip';
 import { TripData } from '../services/trip-data';
+import { Authentication } from '../services/authentication';
 
 @Component({
   selector: 'app-trip-list',
@@ -13,8 +14,15 @@ export class TripList {
   trips$: Observable<Trip[]>;
   selectedTrip: Trip | null = null;
 
-  constructor(private tripDataService: TripData) {
+  constructor(
+    private tripDataService: TripData,
+    private authenticationService: Authentication
+  ) {
     this.trips$ = this.tripDataService.getTrips();
+  }
+
+  public isLoggedIn(): boolean {
+    return this.authenticationService.isLoggedIn();
   }
 
   onTripAdded(): void {

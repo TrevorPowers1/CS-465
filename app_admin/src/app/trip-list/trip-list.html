@@ -2,20 +2,18 @@
   <h2>Travlr Getaways Trips</h2>
 
   <app-add-trip
-    *ngIf="!selectedTrip"
+    *ngIf="isLoggedIn() && !selectedTrip"
     (tripAdded)="onTripAdded()">
   </app-add-trip>
 
   <app-edit-trip
-    *ngIf="selectedTrip"
+    *ngIf="isLoggedIn() && selectedTrip"
     [trip]="selectedTrip"
     (tripUpdated)="onTripUpdated()"
     (cancelEdit)="onCancelEdit()">
   </app-edit-trip>
 
   <div *ngIf="trips$ | async as trips">
-    <p><strong>Trips loaded:</strong> {{ trips.length }}</p>
-
     <div class="row">
       <div class="col-md-4 mb-4" *ngFor="let trip of trips">
         <app-trip-card
