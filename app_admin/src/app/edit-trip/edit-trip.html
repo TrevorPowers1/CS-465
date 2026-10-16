@@ -1,0 +1,71 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <h3>Edit Trip</h3>
+
+    <form *ngIf="editTrip" (ngSubmit)="updateTrip()">
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="editTrip.code"
+        name="code"
+        placeholder="Trip Code"
+        readonly
+      >
+
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="editTrip.name"
+        name="name"
+        placeholder="Trip Name"
+      >
+
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="editTrip.length"
+        name="length"
+        placeholder="Length"
+      >
+
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="editTrip.start"
+        name="start"
+        type="date"
+      >
+
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="editTrip.resort"
+        name="resort"
+        placeholder="Resort"
+      >
+
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="editTrip.perPerson"
+        name="perPerson"
+        placeholder="Price Per Person"
+      >
+
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="editTrip.image"
+        name="image"
+        placeholder="Image"
+      >
+
+      <textarea
+        class="form-control mb-3"
+        [(ngModel)]="editTrip.description"
+        name="description"
+        placeholder="Description"></textarea>
+
+      <button class="btn btn-success me-2" type="submit">
+        Update Trip
+      </button>
+
+      <button class="btn btn-secondary" type="button" (click)="cancel()">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <h3>Add Trip</h3>
+
+    <form (ngSubmit)="addTrip()">
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="trip.code"
+        name="code"
+        placeholder="Trip Code"
+        required
+      >
+
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="trip.name"
+        name="name"
+        placeholder="Trip Name"
+        required
+      >
+
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="trip.length"
+        name="length"
+        placeholder="Length"
+      >
+
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="trip.start"
+        name="start"
+        type="date"
+      >
+
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="trip.resort"
+        name="resort"
+        placeholder="Resort"
+      >
+
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="trip.perPerson"
+        name="perPerson"
+        placeholder="Price Per Person"
+      >
+
+      <input
+        class="form-control mb-2"
+        [(ngModel)]="trip.image"
+        name="image"
+        placeholder="Image"
+      >
+
+      <textarea
+        class="form-control mb-3"
+        [(ngModel)]="trip.description"
+        name="description"
+        placeholder="Description"></textarea>
+
+      <button class="btn btn-primary" type="submit">
+        Add Trip
+      </button>
+    </form>
+  </div>
+</div>
